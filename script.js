@@ -4,4 +4,6 @@ function ThemeToggle(){
     toggle.classList.toggle("active")
 }
 toggle.addEventListener("click", ThemeToggle)
-
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+ThemeToggle()    // dark mode
+}
