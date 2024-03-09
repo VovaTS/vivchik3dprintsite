@@ -1,102 +1,209 @@
-        /* Стили для страницы */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-        h1 {
-            margin: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            overflow: hidden;
-            align-items: center;
-            text-align: center;
-        }
-        .gallery {
-           display: flex;
-            justify-items: center;
-            align-items: center;
-            gap: 20px;
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border: 1px solid #ccc;
-            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            z-index: 10;
-        }
-        .mainsection {
-            background: url("drevovidnaya-tochechnaya-podderjka-modelei-v-3D-pechati-2.png")center center/cover no-repeat;
-            background-attachment: fixed;
-            height: 100vh;
-            color: aqua;
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .mainsection:after {
-            content: "";
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.555);
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .title {
-            font-size: 72px;
-            margin-right: 20px;
-            position: relative;
-            z-index: 10;
-        }
-        .subtitle {
-            font-size: 36px;
-            position: relative;
-            z-index: 10;
-        }
-        .examples {
-            position: relative;
-            z-index: 10;
-        }
-        .printer {
-            position: relative;
-            z-index: 10;
-            margin-right: 20px;
-        }
-        .footer {
-            text-align: center;
-            font-weight: 600;
-        }
-        @media(max-width: 1250px) {
-            .gallery img {
-                width: 200px;
-            }
-            .title {
-                font-size: 36px;
-            }
-            .subtitle {
-                font-size: 15px;
-            }
-        }
-        @media(max-width:650px) {
-            .gallery img  {
-                width: 300px;
-            }
-            .gallery img:first-child, .gallery img:last-child {
+/* Стили для страницы */
+body {
+    transition: 0.4s;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+header {
+    transition: 0.4s;
+    background-color: #d3d3d3;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0;
+}
+h1 {
+    margin: 0;
+}
+.container {
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+}
+.gallery {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 10;
+}
+.mainsection {
+    background: url("drevovidnaya-tochechnaya-podderjka-modelei-v-3D-pechati-2.png")center center/cover no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    color: aqua;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.mainsection:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.555);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.title {
+    font-size: 72px;
+    margin-right: 20px;
+    position: relative;
+    z-index: 10;
+}
+.subtitle {
+    font-size: 36px;
+    position: relative;
+    z-index: 10;
+}
+.examples {
+    position: relative;
+    z-index: 10;
+}
+.printer {
+    position: relative;
+    z-index: 10;
+    margin-right: 20px;
+}
+.footer {
+    text-align: center;
+    font-weight: 600;
+}
+
+.advantages {
+    transition: 0.4s;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+li {
+    margin-bottom: 10px;
+}
+
+#themetoggle {
+    border: none;
+    background: none;
+    outline: none;
+    width: 120px;
+    height: 60px;
+    padding: 2px;
+    border-radius: 35px;
+    position: fixed;
+    right: 20px;
+    top: 60px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s;
+    box-shadow: 0px 9px 6px 1px rgba(255, 255, 255, 0.2);
+}
+
+.themeimagebox {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.4s;
+}
+.themeimagebox img {
+    width: 70%;
+    position: absolute;
+    transition: all 0.2s;
+}
+.themeimagebox img:first-child {
+    opacity: 1;
+}
+.themeimagebox img:last-child {
+    opacity: 0;
+}
+.active .themeimagebox img:first-child {
+    opacity: 0;
+}
+.active .themeimagebox img:last-child {
+    opacity: 1;
+}
+#themetoggle.active {
+    background: rgb(83, 83, 83);
+    box-shadow: 0px 9px 6px 1px rgba(0, 0, 0, 0.2);
+}
+#themetoggle.active .themeimagebox {
+    transform: translateX(64px);
+}
+.gmail {
+    transition: 0.4s;
+    color: aqua;
+}
+.dark header {
+    background: #333;
+    color: #fff;
+}
+.dark {
+    background: #303030;
+    color: #fff;
+}
+.dark .advantages {
+    background: #333;
+
+}
+.dark .gmail {
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1250px) {
+    .gallery img {
+        width: 200px;
+    }
+    .title {
+        font-size: 36px;
+    }
+    .subtitle {
+        font-size: 15px;
+    }
+}
+@media(max-width:650px) {
+    .gallery img  {
+        width: 300px;
+    }
+    .gallery img:first-child, .gallery img:last-child {
 display: none;
-            }
-        }
+    }
+}
+
+
+
