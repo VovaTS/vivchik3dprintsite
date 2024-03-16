@@ -116,6 +116,7 @@ li {
     align-items: center;
     transition: all 0.4s;
     box-shadow: 0px 9px 6px 1px rgba(255, 255, 255, 0.2);
+    z-index: 100;
 }
 
 .themeimagebox {
@@ -202,6 +203,9 @@ li {
     }
     .gallery img:first-child, .gallery img:last-child {
 display: none;
+    }
+    #themetoggle{
+        top: 110px;
     }
 }
 
