@@ -174,13 +174,74 @@ li {
     color: #fff;
 }
 
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
+.form {
+    margin: 0 auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+}
 
+.forminput {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 3px;
+}
 
+.send {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: none;
+    background: #9b9b9b;
+    padding: 10px 5px;
+    text-align: center;
+    transition: 0.4s;
+}
+#sendbutton {
+    transition: 0.4s;
+}
+.dark .send {
+    background: #5c5c5c;
+    color: white;
+}
 
+.forminput.error {
+    border-color: red;
+}
 
+.form.hide{
+    position: relative;
+}
+.form.hide:after{
+    content: "Заказ Отправлен";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #f2f2f2;
+    transition: 0.4s;
+}
 
-
+.dark .form.hide:after{
+    background: #303030;
+}
 
 
 

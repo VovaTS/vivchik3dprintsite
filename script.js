@@ -14,16 +14,33 @@ sendb.addEventListener("click", async function(e){
     let name = document.querySelector("#username")
     let number = document.querySelector("#phonenumber")
     let textarea = document.querySelector("#userwish")
-    let token = "6036086539:AAFPhEDtOxxFv5gdjEl0g_mw6eSE7k557is"
-    let id = "2092827728"
-    let data =` 
-    Новый Заказ:%0A
-    Имя: ${name.value}%0A
-    Номер: ${number.value}%0A
-    Пожелание: ${textarea.value}%0A
-    `
-    let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&text=${data}`
-    let response = await fetch(url)
-    let result = await response.json()
-    console.log(result)
+    let haserror = false
+    name.classList.remove("error")
+    if(name.value==""){
+        name.classList.add("error")
+        haserror = true
+    }
+    number.classList.remove("error")
+    if(number.value==""){
+        number.classList.add("error")
+        haserror = true
+    }
+    if(haserror == false){
+        let token = "6036086539:AAFPhEDtOxxFv5gdjEl0g_mw6eSE7k557is"
+        let id = "2092827728"
+        let data =` 
+        Новый Заказ:%0A
+        Имя: ${name.value}%0A
+        Номер: ${number.value}%0A
+        Пожелание: ${textarea.value==""?"Нет":textarea.value}%0A
+        `
+        let url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&text=${data}`
+        let response = await fetch(url)
+        let result = await response.json()
+        console.log(result)
+        name.value = ("")
+        number.value = ("")
+        textarea.value = ("")
+        document.querySelector(".form").classList.add("hide")
+    }
 })
